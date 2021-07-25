@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
   html, body, #root {
     min-height: 100%;
-    background: #222;
+    background: #f3f6fa;
     color: #fff;
   }
   body, input, button {
