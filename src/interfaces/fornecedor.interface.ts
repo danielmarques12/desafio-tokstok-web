@@ -1,4 +1,5 @@
 export interface Fornecedor {
+  id: number;
   nome: string;
   razao_social: string;
   cnpj: string;

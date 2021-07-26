@@ -1,6 +1,7 @@
+import { Button } from '@material-ui/core';
 import { useState, useEffect } from 'react';
+import { Fornecedor } from '../../interfaces/fornecedor.interface';
 import { api } from '../../services/api';
-import { Fornecedor } from './interfaces/fornecedor.interface';
 import { Container } from './styles';
 
 export function Home() {
@@ -12,13 +13,18 @@ export function Home() {
       .then((response) => setFornecedores(response.data));
   }, []);
 
+  const handleRedirect = (id: number) => {
+    window.location.href = `../fornecedor/${id}`;
+  };
+
   return (
     <Container>
       <h1>Fornecedores</h1>
 
-      <table>
+      <table cellSpacing='0'>
         <tr>
           <th>Nome</th>
+          <th>Ver fornecedor</th>
           <th>Razão social</th>
           <th>CNPJ</th>
           <th>Segmento</th>
@@ -31,8 +37,16 @@ export function Home() {
         </tr>
 
         {fornecedores.map((fornecedor) => (
-          <tr>
+          <tr key={fornecedor.id}>
             <td>{fornecedor.nome}</td>
+            <td>
+              <Button
+                style={{ textTransform: 'none' }}
+                onClick={() => handleRedirect(fornecedor.id)}
+              >
+                Ver Detalhes
+              </Button>
+            </td>
             <td>{fornecedor.razao_social}</td>
             <td>{fornecedor.cnpj}</td>
             <td>{fornecedor.segmento}</td>
