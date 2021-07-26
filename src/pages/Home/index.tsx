@@ -41,7 +41,11 @@ export function Home() {
             <td>{fornecedor.nome}</td>
             <td>
               <Button
-                style={{ textTransform: 'none' }}
+                style={{
+                  textTransform: 'none',
+                  color: '#009845',
+                  fontWeight: 'bold'
+                }}
                 onClick={() => handleRedirect(fornecedor.id)}
               >
                 Ver Detalhes
