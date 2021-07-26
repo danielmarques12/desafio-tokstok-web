@@ -75,6 +75,22 @@ export function Fornecedor({ match }: Props) {
             <td>Email</td>
             <td>{fornecedor.email}</td>
           </tr>
+          <tr>
+            <td>CEP</td>
+            <td>{fornecedor.endereco.cep}</td>
+          </tr>
+          <tr>
+            <td>Rua</td>
+            <td>{fornecedor.endereco.rua}</td>
+          </tr>
+          <tr>
+            <td>Número</td>
+            <td>{fornecedor.endereco.numero}</td>
+          </tr>
+          <tr>
+            <td>Complemento</td>
+            <td>{fornecedor.endereco.complemento}</td>
+          </tr>
         </table>
       </Main>
 
